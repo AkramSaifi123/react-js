@@ -9,7 +9,6 @@ function App() {
   const [convertedAmount, setConvertedAmount] = useState(0)
 
   const currencyInfo = useCurrencyInfo(from)
-  // console.log(from)
   const options = Object.keys(currencyInfo || {})
 
   const swap = () => {
@@ -56,11 +55,12 @@ function App() {
             <div className="w-full mt-1 mb-4">
               <InputBox 
               label="to"
-              Amount={amount}
+              Amount={convertedAmount}
               currencyOptions={options}
-              onCurrencyChange={(currency) => setAmount(amount)}
+              onCurrencyChange={(currency) => SetTo(currency)}
               onAmountChange={(amount) => setAmount(amount)}
               selectCurrency={to}
+              amountDisable
               />
             </div>
             <button
