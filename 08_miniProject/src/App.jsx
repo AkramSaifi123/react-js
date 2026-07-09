@@ -1,13 +1,19 @@
-import { useState } from 'react'
+
+import UserContextProvider from "./context/UserContextProvider"
 import './App.css'
+import Login from './components/Login'
+import Profile from './components/Profile'
 
 function App() {
   
 
   return (
-    <>
-      <h1>mini project</h1>
-    </>
+   
+    <UserContextProvider>
+      <h1>React with chai</h1>
+      <Login />
+      <Profile />
+    </UserContextProvider>
   )
 }
 
